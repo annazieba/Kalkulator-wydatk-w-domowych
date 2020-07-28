@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="style.css">
+		<title>Kalkulator wydatków</title>
+    </head>
+	
+    <body>
+		<header>Kalkulator wydatków domowych</header><br />
+		<form>
+		<div class="kontener">
+			<div class="przychody">Przychód<br />
+				<input class="pole" type="number" name="nazwa">
+			</div>
+			
+		<div class="wydatki">
+			<br />
+			<div class="example">
+			
+				<div class="test-cnt" id="appendTest">
+					<div id = "nazwa_wyd">Nazwa wydatku</div> <div id = "koszt">Koszt</div><br /><br />
+					<button class="button" type="button" id="appendTestBtn">Dodaj wydatek</button><br />
+					<input type="text"><input class = "wysokosc" type="number">
+				</div>
+				<div class="konten">
+			
+				<div class="bilans">Bilans<br />
+					<input class="pole_bilans" type="number" name="nazwa">
+					<button onclick="myFunction()" class="button" type="button" id="oblicz">Oblicz</button><br />
+				</div>
+				<br />
+				
+		<div class="row">
+        <div class="col-1-1">
+            <button type="button" class="button btn-test-edit editable">Zapisz</button>
+        </div><br />
+		<div><button type="reset" class = "button">Wyczyść pola</button></div>
+    </div>
+			</form>
+			</div>
+			
+				<script>
+
+					var btn = document.querySelector("#appendTestBtn");
+					var div = document.querySelector("#appendTest");
+
+					btn.addEventListener("click", function() {
+					
+						var newEl = document.createElement("div");
+						newEl.classList.add("element");
+						newEl.innerHTML = `<input type="text" name="nazwa">` + `<input class = "wysokosc" type="text" name="nazwa">`;
+						div.appendChild(newEl);
+					
+					})
+
+				</script>
+			
+			
+			<script>
+			
+			function myFunction() {
+				var suma = 0;
+				var zliczenie = document.getElementById("appendTest");
+				
+				if (zliczenie != undefined && zliczenie !== null) {
+					
+					var komorki = zliczenie.getElementsByClassName("wysokosc");
+					
+					if (komorki != undefined && komorki != null) {
+						
+						for(var i=0; i<=komorki.length; i++){
+						
+							var komory = komorki[i];
+							
+							if (komory != undefined && komory != null) {
+								
+								var wartosci = parseInt(komory.value);
+								
+								if (wartosci !=undefined && wartosci != null){
+						
+									suma += wartosci;
+								}
+							}
+						}
+						console.log(suma);	
+					}
+				}
+				
+				var przychod = document.getElementsByClassName("przychody");
+				
+				if(przychod != undefined && przychod != null){
+					
+					for(var j=0; j<=przychod.length; j++){
+						
+						var przych = przychod[j];
+					
+						if (przych != undefined && przych != null) {
+							
+							var prz = przych.getElementsByClassName("pole");
+							
+							if(prz != undefined && prz != null){
+							
+								for (var z=0; z<=prz.length; z++){
+								
+									var wyn = prz[z];
+									
+									if (wyn != undefined && wyn != null){
+										var wynik = parseInt(wyn.value);
+										console.log(wynik);
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				bilansik = (wynik-suma);
+				console.log(bilansik);
+				
+				//------------------
+				
+				var koncowy = document.getElementsByClassName("bilans");
+				
+				if(koncowy != undefined && koncowy != null){
+					
+					for(var m=0; m<=koncowy.length; m++){
+						
+						var konc = koncowy[m];
+					
+						if (konc != undefined && konc != null) {
+							
+							var ko = konc.getElementsByTagName("input");
+							
+							if(ko != undefined && ko != null){
+							
+								for (var b=0; b<=ko.length; b++){
+						
+									var koniec = ko[b];
+									
+									if (koniec != undefined && koniec != null){
+									
+										var przycisk = document.getElementById("oblicz");
+										
+										koniec.value = bilansik;
+										
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			myFunction();	
+</script>
+
+
+<script>
+    {
+        const btn = document.querySelector(".btn-test-edit");
+        btn.addEventListener("click", function() {
+            this.classList.toggle("editable");
+
+            if (this.classList.contains("editable")) {
+                //włącz tryb edytowania
+                for (const element of this.form.elements) {
+                    if (element.tagName.toLowerCase() !== "button") {
+                        element.disabled = false;
+                    }
+                }
+                this.form.classList.add("edited");
+                this.innerText = "Zakończ edycję";
+            } else {
+                //wyłącz tryb edytowania
+                for (const element of this.form.elements) {
+                    if (element.tagName.toLowerCase() !== "button") {
+                        element.disabled = true;
+                    }
+                }
+                this.form.classList.remove("edited");
+                this.innerText = "Edytuj";
+            }
+        });
+    }
+</script>
+			
+		</div>
+		
+    </body>
+</html>

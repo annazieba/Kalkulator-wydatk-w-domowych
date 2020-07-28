@@ -1,0 +1,102 @@
+body {
+	
+	background-color:#FFF8E1;
+	margin-left: auto;
+margin-right: auto;
+}
+header {
+	text-align:center;
+	FONT-SIZE: 20pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+}
+
+#appendTest {
+	
+	width: 50%;
+	background-color:#FFECB3;
+	border:3px solid red;
+	border-radius: 15px;
+	font-size:1.4em;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+
+#nazwa_wyd {
+	
+	float:left;
+	width:50%;
+	background-color:#FFE082;
+	border-top-left-radius:15px;
+	FONT-SIZE: 18pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+}
+
+
+#koszt {
+	
+	float:left;
+	width:50%;
+	background-color:#FFE082;
+	border-top-right-radius:15px;
+	FONT-SIZE: 18pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+}
+
+input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  FONT-SIZE: 14pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+}
+
+input[type=number] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  FONT-SIZE: 14pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+}
+
+.pole {
+	
+	FONT-SIZE: 14pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial;
+	
+}
+
+.przychody {
+	
+	width:50%;
+	margin-left: 12px;
+	FONT-FAMILY: arial; 
+	FONT-SIZE: 14pt;	
+}
+
+.bilans {
+	
+	width:50%;
+	margin-left: 12px;
+	FONT-FAMILY: arial; 
+	FONT-SIZE: 14pt;	
+}
+
+.button {
+	FONT-SIZE: 14pt; 
+	COLOR: #000000; 
+	FONT-FAMILY: arial; 
+	background-color: #FF5722;
+	border-radius: 5px;
+	border-color:#E64A19;
+}
